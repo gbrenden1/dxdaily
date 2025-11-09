@@ -8,6 +8,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
+import { Calendar } from 'lucide-react'
 
 import Archives from './Archives'
 
@@ -20,8 +21,9 @@ export default function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton>
                   <span>{"Today's Challenge"}</span>
+                  <Calendar className="ml-auto h-4 w-4" />
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>

@@ -27,9 +27,7 @@ export default function ArchivesClient({ archives }: { archives: string[] }) {
         <SidebarMenuButton>
           <span>Previous Challenges</span>
           <ChevronRight
-            className={`ml-auto h-4 w-4 transition-transform ${
-              open ? 'rotate-90' : ''
-            }`}
+            className={`ml-auto h-4 w-4 ${open ? 'rotate-90' : ''}`}
           />
         </SidebarMenuButton>
       </CollapsibleTrigger>
@@ -37,11 +35,15 @@ export default function ArchivesClient({ archives }: { archives: string[] }) {
       <CollapsibleContent>
         <SidebarMenuSub>
           <SidebarMenuSubItem>
-            {archives.map((archive, i) => {
-              return (
-                <SidebarMenuSubButton key={i}>{archive}</SidebarMenuSubButton>
-              )
-            })}
+            {archives.length > 0 ? (
+              archives.map((archive, i) => {
+                return (
+                  <SidebarMenuSubButton key={i}>{archive}</SidebarMenuSubButton>
+                )
+              })
+            ) : (
+              <span>No previous challenges yet!</span>
+            )}
           </SidebarMenuSubItem>
         </SidebarMenuSub>
       </CollapsibleContent>
